@@ -1,0 +1,16 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    ; I/O端口
+
+    MOV DX, 60H
+    IN AL, DX
+
+    MOV DX, 378H
+    MOV AL, 41H
+    OUT DX, AL
+
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START

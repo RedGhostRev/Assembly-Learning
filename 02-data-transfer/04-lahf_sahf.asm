@@ -1,0 +1,15 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV DL, 2
+    CMP DL, 1 ; FLAGS: 00000010B
+    LAHF ; Load AH from Flags
+
+    MOV AH, 10010101B
+    SAHF ; Store AH into Flags
+
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START
+    

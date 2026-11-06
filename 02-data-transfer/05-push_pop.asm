@@ -1,0 +1,16 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV AX, 1234H
+    MOV BX, 5678H
+    PUSH AX
+    PUSH BX
+    POP AX
+    POP BX
+
+    ; PUSHF/POPF: 16位标志寄存器入栈和出栈指令
+
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START
