@@ -1,0 +1,16 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV AX, 5
+    MOV BL, 2
+    DIV BL ; AL = 2, AH = 1
+
+    MOV AX, 129
+    MOV DX, 0
+    MOV BX, 2
+    DIV BX ; DX:AX / BX -> 129 / 2 -> AX = 64, DX = 1
+
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START

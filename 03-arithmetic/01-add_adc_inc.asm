@@ -1,0 +1,18 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV AL, 1
+    ADD AL, 1
+
+    MOV BX, 8888H
+    ADD BX, 8111H
+    MOV CX, 3333H
+    ADC CX, 2222H ; 带进位，加上低16位相加后的CF值
+
+    MOV DL, 0
+    INC DL
+
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START

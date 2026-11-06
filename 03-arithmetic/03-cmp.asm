@@ -1,0 +1,19 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV AL, 1
+    CMP AL, 1
+    ; 比较AL与1，如果ZF为1，即AL=1，则跳转到ZERO
+    JZ ZERO
+    
+    MOV AH, -1
+    JMP LAST
+
+ZERO:
+    MOV AH, 1
+
+LAST:
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START

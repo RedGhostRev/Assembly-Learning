@@ -1,0 +1,18 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV AL, 2
+    SUB AL, 1
+
+    MOV BX, 2222H
+    SUB BX, 6666H
+    MOV CX, 7777H
+    SBB CX, 1111H ; 带借位，减去低16位相减后的CF值
+
+    MOV DL, 2
+    DEC DL
+
+    MOV AX, 4C00H
+    INT 21H
+CODE ENDS
+END START
